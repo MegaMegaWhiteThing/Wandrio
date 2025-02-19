@@ -3,44 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Coming Soon - Wandrio</title>
     <style>
+        /* Reset default margin and set full height */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Center content both vertically and horizontally */
         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full screen height */
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
         }
-        h1 {
-            font-size: 36px;
+
+        /* Center content inside the container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
-        .privacy {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #555;
-        }
+
+        /* Responsive logo scaling */
         .logo {
             max-width: 100%;  /* Prevents the logo from overflowing */
             height: auto;  /* Maintains aspect ratio */
-            display: block;
-            margin: 20px auto; /* Centers the logo */
-            width: 400px; /* Default size for desktop */
+            width: 500px; /* Default size for desktop */
+            margin-bottom: 20px;
         }
 
-/* Adjust size for smaller screens */
-@media (max-width: 768px) {
-    .logo {
-        width: 150px;  /* Smaller size on tablets */
-    }
-}
+        /* Main heading */
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Subtext */
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Adjust logo size for tablets */
+        @media (max-width: 768px) {
+            .logo {
+                width: 600px;
+            }
+        }
+
+        /* Adjust logo size for mobile */
+        @media (max-width: 480px) {
+            .logo {
+                width: 400px;
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
-    <h2>Coming Soon</h2>
-    <p>We’re working on something exciting</p>
-
-<p><a href="privacy-policy.html">Privacy Policy</a></p>
+    <div class="container">
+        <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
+        <h1>Coming Soon</h1>
+        <p>We’re working on something exciting. Stay tuned!</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a></p>
     </div>
 </body>
 </html>
