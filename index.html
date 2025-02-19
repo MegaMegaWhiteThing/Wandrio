@@ -19,10 +19,24 @@
             font-size: 14px;
             color: #555;
         }
+        .logo {
+            max-width: 100%;  /* Prevents the logo from overflowing */
+            height: auto;  /* Maintains aspect ratio */
+            display: block;
+            margin: 20px auto; /* Centers the logo */
+            width: 200px; /* Default size for desktop */
+        }
+
+/* Adjust size for smaller screens */
+@media (max-width: 768px) {
+    .logo {
+        width: 150px;  /* Smaller size on tablets */
+    }
+}
     </style>
 </head>
 <body>
-    <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" width="600">
+    <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
     <h2>Coming Soon</h2>
     <p>We’re working on something exciting</p>
 
