@@ -16,10 +16,11 @@ body {
 
 /* Header Styling */
 header {
-    text-align: left; /* Aligned text to the left */
-    margin-bottom: 30px; /* Increased margin for better spacing */
-    border-bottom: 2px solid #ddd; /* Added a bottom border for separation */
-    padding-bottom: 10px; /* Added padding below the header */
+    max-width: 900px;              /* Same max-width as .container */
+    margin: 0 auto 30px auto;       /* Centers header horizontally */
+    border-bottom: 2px solid #ddd;  /* Bottom border for separation */
+    padding-bottom: 10px;           /* Padding below the header */
+    text-align: left;               /* Ensure text remains left-aligned */
 }
 
 header h1 {
