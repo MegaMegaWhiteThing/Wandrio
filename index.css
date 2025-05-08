@@ -23,10 +23,10 @@ body {
   text-align: left;
 }
 
-/* Logo styling: increased size & centered */
+/* Logo styling: increased size & centered (remains aligned to left edge of text if desired) */
 .logo {
   width: auto;
-  max-width: 500px; /* Increased from 300px */
+  max-width: 500px; /* You can adjust this value as needed */
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
@@ -36,12 +36,13 @@ body {
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 40px; /* Increased from 20px */
+  margin-bottom: 80px;  /* Doubled vertical space compared to before */
 }
 
 /* Support text: left aligned with extra spacing for rows */
 .support-text {
-  margin-top: 80px; /* doubled vertical space */
+  /* Remove any inline margin-top from HTML so that we can rely on this rule */
+  margin-top: 30px;
   text-align: left;
 }
 .support-text h2 {
@@ -49,7 +50,7 @@ h1 {
   font-size: 2rem;
 }
 .support-text p {
-  margin-bottom: 15px; /* Adds a row change effect between paragraphs */
+  margin-bottom: 15px;  /* Adds space between paragraphs */
 }
 
 /* Email form styles */
