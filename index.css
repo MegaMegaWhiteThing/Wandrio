@@ -23,9 +23,10 @@ body {
   /* No background property to keep it transparent */
 }
 
-/* Logo styling: make it smaller */
+/* Logo styling: make it fill the container width (up to a max) */
 .logo {
-  max-width: 150px;
+  width: 100%;
+  max-width: 300px; /* Adjust this value as needed so that logo width matches your text width */
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
