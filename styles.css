@@ -13,14 +13,14 @@ body {
   padding: 30px 0;
 }
 
-/* Container for page content */
+/* Container for info pages: no white background, no border radius or shadow */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Header Styling for pages */
@@ -50,6 +50,23 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 10px;
+}
+
+/* Policy (Info page) Content Styling */
+/* Remove any divider lines from headings */
+.policy h2,
+.policy h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph and list spacing in policy pages */
+.policy p,
+.policy li {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 /* Footer Styling (if used independently) */
