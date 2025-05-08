@@ -24,6 +24,7 @@ body {
 }
 
 /* Header Styling for pages */
+/* Default header for non-info pages */
 .page-header {
   background-color: #006400;
   color: #fff;
@@ -34,6 +35,12 @@ body {
   text-align: center;
   font-size: 2rem;
   margin: 0;
+}
+
+/* Hide the header on info pages (Privacy Policy, Data Removal, etc.)
+   Add the class "info-page" to the <body> tag in these pages */
+body.info-page .page-header {
+  display: none;
 }
 
 /* Section styling for instructions and policy sections */
