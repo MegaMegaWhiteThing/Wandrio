@@ -26,8 +26,8 @@ body {
 /* Header Styling for pages */
 /* Default header for non-info pages */
 .page-header {
-  background-color: #ffffff;
-  color: #fff;
+  background: none; /* remove background color */
+  color: #000;      /* header text will be black */
   padding: 20px 0;
   margin-bottom: 20px;
 } 
@@ -35,6 +35,7 @@ body {
   text-align: center;
   font-size: 2rem;
   margin: 0;
+  color: #000;      /* ensure header text remains black */
 }
 
 /* Hide the header on info pages (Privacy Policy, Data Removal, etc.)
