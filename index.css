@@ -23,10 +23,10 @@ body {
   /* No background property to keep it transparent */
 }
 
-/* Logo styling: make it fill the container width (up to a max) */
+/* Logo styling: set fixed maximum width */
 .logo {
-  width: 50%;
-  max-width: 50px; /* Reduced from 300px so the logo width matches the text width */
+  width: auto;
+  max-width: 50px; /* The logo will not exceed 50px in width */
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
