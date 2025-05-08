@@ -4,88 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon - Wandrio</title>
-    <style>
-        /* Reset default margin and set full height */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Center content both vertically and horizontally */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full screen height */
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        /* Center content inside the container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Responsive logo scaling */
-        .logo {
-            max-width: 100%;  /* Prevents the logo from overflowing */
-            height: auto;  /* Maintains aspect ratio */
-            width: 500px; /* Default size for desktop */
-            margin-bottom: 20px;
-        }
-
-        /* Main heading */
-        h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        /* Subtext */
-        p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        /* Link styling */
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Adjust logo size for tablets */
-        @media (max-width: 768px) {
-            .logo {
-                width: 600px;
-            }
-        }
-
-        /* Adjust logo size for mobile */
-        @media (max-width: 480px) {
-            .logo {
-                width: 400px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
         <h1>Coming Soon</h1>
         <p>We’re working on something exciting. Stay tuned!</p>
-        <p><a href="privacy-policy.html">Privacy Policy</a></p>
-        <a href="data-removal.html">Delete My Account</a>
+
+        <!-- Join Us: Email Form -->
+        <div class="email-form">
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Join Us!</button>
+            </form>
+        </div>
+
+        <!-- Support Text Section -->
+        <div class="support-text">
+            <h2>Support Wandrio: Turn Movement into Adventure</h2>
+            <p>At Wandrio, we believe the world is meant to be explored—on foot, by bike, however you move. Our mission is to get people moving in nature more often by turning the outdoors into a game. With Wandrio, every step becomes an opportunity. We’ve built a movement-based tile collection game that rewards you for discovering new places, collecting virtual map tiles, and competing with friends and teams across real-world landscapes.</p>
+            <p>Wandrio encourages daily activity by transforming walks, hikes, and bike rides into meaningful adventures. You earn points and unlock achievements just by visiting new places—whether it’s a hidden park in your neighborhood or a breathtaking hilltop you’ve never seen before. Explore natural landmarks, join exploration challenges, and compete in leagues—all while becoming more active.</p>
+            <p>We're launching Wandrio to reconnect people with nature and with their own local environment. But we need your support to bring this vision to life. Your contribution will help us develop core features, expand to new regions, and create unforgettable outdoor experiences for everyone.</p>
+            <p>Join us in building a world where going outside isn’t just healthy—it’s thrilling. Support Wandrio and make every move count.</p>
+        </div>
     </div>
+
+    <!-- Footer with Small Links -->
+    <footer>
+        <a href="privacy-policy.html">Privacy Policy</a> | <a href="data-removal.html">Delete My Account</a>
+    </footer>
 </body>
 </html>
