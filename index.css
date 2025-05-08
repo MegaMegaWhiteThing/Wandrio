@@ -25,7 +25,7 @@ body {
 
 /* Logo styling: make it fill the container width (up to a max) */
 .logo {
-  width: 100%;
+  width: 50%;
   max-width: 50px; /* Reduced from 300px so the logo width matches the text width */
   height: auto;
   display: block;
