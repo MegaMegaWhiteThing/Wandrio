@@ -26,7 +26,7 @@ body {
 /* Logo styling: set fixed maximum width */
 .logo {
   width: auto;
-  max-width: 50px; /* The logo will not exceed 50px in width */
+  max-width: 300px; /* The logo will not exceed 50px in width */
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
