@@ -68,12 +68,3 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-``` 
-
-──────────────────────────────
-Usage  
-──────────────────────────────
-1. Replace your existing data‑removal.html and privacy‑policy.html files with the updated versions.  
-2. Replace or update your styles.css file with the above CSS.
-
-Both pages will now have a similar layout and improved styling with a shared container, consistent headings, and a matching header style. Feel free to tweak the colors and spacing to best match your brand.
