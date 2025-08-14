@@ -7,26 +7,60 @@
   box-sizing: border-box;
 }
 
-/* Body & Base Styling */
+/* Prevent scrolling outside the viewport */
 body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
   color: #222;
-  padding: 30px 0;
 }
 
-/* Container for index page (no white background) */
+/* Video styling: ensure the video covers the screen */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  object-fit: cover;
+}
+
+/* Black overlay with 50% opacity */
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Main content container positioned over video and overlay */
 .container {
-  max-width: 900px;
-  margin: 0 auto;
+  position: fixed; /* Makes sure it stays in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center content vertically */
+  align-items: center;      /* Center content horizontally */
+  text-align: center;
+  color: #fff;  /* Ensure text is easily readable over the dark overlay */
   padding: 20px;
-  text-align: left;
 }
 
 /* Logo styling: increased size & centered (remains aligned to left edge of text if desired) */
 .logo {
-  width: auto;
-  max-width: 500px; /* You can adjust this value as needed */
+  max-width: 300px;
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
@@ -41,8 +75,8 @@ h1 {
 
 /* Support text: left aligned with extra spacing for rows */
 .support-text {
-  /* Remove any inline margin-top from HTML so that we can rely on this rule */
-  margin-top: 30px;
+  max-width: 800px;
+  margin-bottom: 20px;
   text-align: left;
 }
 .support-text h2 {
@@ -61,8 +95,6 @@ h1 {
 .email-form input[type="email"] {
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   width: 250px;
   margin-right: 10px;
 }
