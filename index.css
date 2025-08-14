@@ -77,13 +77,14 @@ body {
   max-width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 8px;
 }
 
 /* Headline styling */
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 /* Support text container */
