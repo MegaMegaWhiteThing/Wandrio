@@ -15,6 +15,58 @@ body {
   margin: 0;
 }
 
+/* Info Pages Global Styles (for privacy_policy, terms, data_removal, etc.) */
+
+/* Base body styling for info pages */
+body.info-page {
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  /* Allow vertical scrolling for content that exceeds the viewport height */
+  overflow-y: auto;
+}
+
+/* Hide the header on info pages */
+body.info-page .page-header {
+  display: none;
+}
+
+/* Main container for info pages */
+.info-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent; /* no white background */
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+  color: #222;
+}
+
+/* Headings styling */
+.info-container h1,
+.info-container h2,
+.info-container h3 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Remove any divider lines for headings */
+.info-container h2,
+.info-container h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Paragraph and list spacing */
+.info-container p,
+.info-container li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
 /* Container for info pages: no white background, no border radius or shadow */
 .container {
   max-width: 900px;
@@ -50,12 +102,6 @@ body {
   font-size: 2rem;
   margin: 0;
   color: #000;      /* ensure header text remains black */
-}
-
-/* Hide the header on info pages (Privacy Policy, Data Removal, etc.)
-   Add the class "info-page" to the <body> tag in these pages */
-body.info-page .page-header {
-  display: none;
 }
 
 /* Section styling for instructions and policy sections */
