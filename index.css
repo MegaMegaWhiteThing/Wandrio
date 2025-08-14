@@ -66,12 +66,18 @@ body {
   background: transparent;
 }
 
+.header-container h1 {
+  /* Optionally reduce top margin if there is one */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 /* Logo styling */
 .logo {
   max-width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 10px auto;
 }
 
 /* Headline styling */
