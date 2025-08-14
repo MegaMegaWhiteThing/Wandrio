@@ -20,12 +20,13 @@ body {
 /* Base body styling for info pages */
 body.info-page {
   font-family: 'Roboto', sans-serif;
-  color: #222;
   background-color: #f4f4f4;
+  color: #222;
   margin: 0;
   padding: 20px;
-  /* Allow vertical scrolling for content that exceeds the viewport height */
-  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hide the header on info pages */
@@ -35,12 +36,11 @@ body.info-page .page-header {
 
 /* Main container for info pages */
 .info-container {
+  flex: 1; /* Takes remaining vertical space and pushes footer down */
   max-width: 900px;
   margin: 0 auto;
-  background: transparent; /* no white background */
+  background: transparent; /* No white background */
   padding: 20px;
-  border-radius: 0;
-  box-shadow: none;
   color: #222;
 }
 
@@ -49,8 +49,7 @@ body.info-page .page-header {
 .info-container h2,
 .info-container h3 {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 20px 0 10px;
 }
 
 /* Remove any divider lines for headings */
@@ -65,6 +64,22 @@ body.info-page .page-header {
 .info-container li {
   margin-bottom: 15px;
   line-height: 1.6;
+}
+
+/* Footer Styling for info pages */
+body.info-page footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  padding: 10px 0;
+}
+body.info-page footer a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+body.info-page footer a:hover {
+  text-decoration: underline;
 }
 
 /* Container for info pages: no white background, no border radius or shadow */
