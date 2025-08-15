@@ -86,14 +86,12 @@
           bottom: 16px;
           z-index: 2;
           border: 0;
-          border-radius: 999px;
-          padding: 12px 14px;
-          background: rgba(0,0,0,.75);
-          color: #fff;
+          padding: 0;              /* icon-only button */
+          background: transparent;  /* no background */
           cursor: pointer;
-          backdrop-filter: blur(4px);
         }
         .info-fab:hover{ filter: brightness(1.1); }
+        .info-fab img{ width: 18px; height: 18px; display:block; }
 
         .info-menu{
           position: fixed;
@@ -118,6 +116,10 @@
           border-radius: 8px;
         }
         .info-menu a:hover{ background: #f3f4f6; }
+        /* Slightly smaller text */
+        h1 { font-size: clamp(1.8rem, 1.2rem + 1.2vw, 2.2rem); margin-bottom: 12px; }
+        .support-text h2 { font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.4rem); }
+        .support-text p { font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -136,7 +138,7 @@
         <h1>Coming Soon</h1>
         <div class="support-text">
             <h2>All in exploration app</h2>
-            <p>At Wandrio, we believe the world is meant to be explored—on foot, by bike, however you move. Our mission is to get people moving in nature more often by turning the outdoors into a game. With Wandrio, every step becomes an opportunity...</p>
+            <p>At Wandrio, we believe the world is meant to be explored—on foot, by bike, however you move. Our mission is to get people moving in nature more often by turning the outdoors into a game.</p>
             <!-- Additional paragraphs as needed -->
         </div>
         <div class="email-form">
@@ -149,8 +151,9 @@
         </div>
     </div>
 
-</footer>
-    <button class="info-fab" aria-expanded="false" aria-controls="infoMenu" id="infoFab">ℹ️ Info</button>
+    <button class="info-fab" aria-label="Open information menu" aria-expanded="false" aria-controls="infoMenu" id="infoFab">
+      <img src="assets/information.png" alt="">
+    </button>
     <nav class="info-menu" id="infoMenu" aria-label="Information links">
       <a href="index.html">Home</a>
       <a href="data-removal.html">Delete My Data</a>

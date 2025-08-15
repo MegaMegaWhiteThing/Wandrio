@@ -1,164 +1,160 @@
-/* Base styles for the index (Coming Soon) page */
+/* Rebuilt CSS for the Coming Soon / Landing page
+   - Normal page scrolling (no overflow hidden)
+   - Background video + overlay never block clicks
+   - Content centered; footer links are clickable and in flow
+   - Slightly smaller text; smaller logo
+*/
 
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
 
-/* Ensure full screen for html and body */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+:root { --footer-h: 60px; }
 
-/* Base body settings */
+/* Base */
 body {
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden; /* overall page scrolling is disabled */
-  background-color: #f4f4f4;
-  color: #222;
-}
-
-/* Background video styling */
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
+  font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  background: #0b0b0b; /* seen briefly under video */
+  color: #111;
+  line-height: 1.6;
   min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2;
-  object-fit: cover;
-}
-
-/* Black overlay with 50% opacity */
-#video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-
-/* Header container fixed to top, scrollable if overflow */
-.header-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* Reserve space for footer (e.g.: footer height = 60px) */
-  bottom: 60px;
-  overflow-y: auto;
-  padding: 20px;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center vertically if content is short */
-  align-items: center;
+}
+
+/* Background video */
+#background-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none; /* never capture clicks */
+}
+
+/* Dark overlay */
+#video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none; /* allow clicks to pass through */
+}
+
+/* Hero/content */
+.header-container {
+  position: relative;     /* no fixed positioning */
+  z-index: 2;             /* above overlay */
+  flex: 1 0 auto;         /* fill available space above footer */
+  min-height: calc(100vh - var(--footer-h));
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 5vw, 64px);
   text-align: center;
-  color: #fff;
+  color: #fff;            /* readable on dark overlay */
   background: transparent;
 }
 
-.header-container h1 {
-  /* Optionally reduce top margin if there is one */
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-/* Logo styling */
+/* Logo smaller + tighter gap */
 .logo {
-  max-width: 300px;
+  max-width: 240px;       /* was 300px */
   height: auto;
   display: block;
   margin: 0 auto 8px;
 }
 
-/* Headline styling */
+/* Headline a bit smaller */
 h1 {
-  font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  font-size: clamp(1.8rem, 1.2rem + 1.2vw, 2.2rem);
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-/* Support text container */
-.support-text {
-  max-width: 800px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.support-text h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-.support-text p {
-  margin-bottom: 15px;
-}
+/* Support text */
+.support-text { max-width: 800px; margin-bottom: 20px; text-align: center; }
+.support-text h2 { font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.4rem); margin-bottom: 16px; }
+.support-text p { margin-bottom: 12px; font-size: 0.95rem; }
 
-/* Email form styles */
-.email-form {
-  margin-top: 30px;
-  text-align: center;
-}
+/* Email form */
+.email-form { margin-top: 20px; text-align: center; }
 .email-form input[type="email"] {
-  padding: 8px;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
-  width: 250px;
+  width: clamp(220px, 40vw, 320px);
   margin-right: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  outline: none;
+  backdrop-filter: blur(4px);
 }
+.email-form input::placeholder { color: rgba(255,255,255,.85); }
 .email-form button {
-  padding: 8px 16px;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
   border: none;
-  border-radius: 4px;
-  background-color: #006400;
-  color: #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: filter 120ms ease;
 }
-.email-form button:hover {
-  background-color: #004d00;
-}
+.email-form button:hover { filter: brightness(.95); }
 
-/* Footer fixed to bottom with full width */
+/* Footer (in flow, clickable) */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
-  padding: 10px 0;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.8); /* optional dark background for better contrast */
+  position: relative;
+  z-index: 3;
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.8);
+  color: #e5e7eb;
 }
-footer a {
-  color: #007bff;
-  text-decoration: none;
-  margin: 0 5px;
-}
-footer a:hover {
-  text-decoration: underline;
-}
+footer a { color: #60a5fa; text-decoration: none; margin: 0 5px; }
+footer a:hover { text-decoration: underline; }
 
-/* Responsive adjustments */
+/* Info button (icon-only) and menu */
+.info-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  border: 0;
+  padding: 0;             /* icon-only button */
+  background: transparent; /* no background */
+  cursor: pointer;
+}
+.info-fab img { width: 18px; height: 18px; display: block; }
+
+.info-menu {
+  position: fixed;
+  right: 16px;
+  bottom: 56px;           /* sits above the icon */
+  z-index: 2;
+  background: rgba(255,255,255,.98);
+  color: #111;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  min-width: 220px;
+  padding: 12px;
+  border: 1px solid rgba(0,0,0,.08);
+  display: none;          /* toggled with .open */
+}
+.info-menu.open { display: block; }
+.info-menu a { display: block; padding: 8px 10px; color: #0a66ff; text-decoration: none; border-radius: 8px; }
+.info-menu a:hover { background: #f3f4f6; }
+
+/* Responsive */
 @media (max-width: 600px) {
-  .support-text {
-    padding: 0 10px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .email-form input[type="email"] {
-    width: 200px;
-  }
+  .support-text { padding: 0 10px; }
+  h1 { font-size: 1.6rem; }
+  .email-form input[type="email"] { width: 200px; }
 }
