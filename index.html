@@ -1,47 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Wandrio</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Wandrio</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <video autoplay loop muted playsinline id="background-video">
-        <source src="assets/nature-flyover.webm" type="video/webm">
-        Your browser does not support the video tag.
-    </video>
-    
-    <!-- Black overlay with 50% opacity -->
-    <div id="video-overlay"></div>
-    
-    <!-- Header Content Container -->
-    <div class="header-container">
-        <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
-        <h1>Coming Soon</h1>
-        <div class="support-text">
-            <h2>All in exploration app</h2>
-            <p>At Wandrio, we believe the world is meant to be explored—on foot, by bike, however you move. Our mission is to get people moving in nature more often by turning the outdoors into a game.</p>
-        </div>
-        <div class="email-form">
-            <form action="https://formspree.io/f/mgvkyqan" method="POST">
-                <label class="sr-only" for="email">Email</label>
-                <input id="email" type="email" name="email" placeholder="Enter your email" aria-label="Email" required>
-                <button type="submit">Join the Waiting List</button>
-            </form>
-        </div>
-    </div>
+  <video autoplay loop muted playsinline id="background-video">
+    <source src="assets/nature-flyover.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
 
-    <button type="button" class="info-fab" aria-label="Open information menu" aria-expanded="false" aria-controls="infoMenu" id="infoFab">
-      <img src="assets/information.png" alt="">
-    </button>
-    <nav class="info-menu" id="infoMenu" aria-label="Information links">
-      <a href="index.html">Home</a>
-      <a href="data-removal.html">Delete My Data</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </nav>
-    <script>
+  <div id="video-overlay"></div>
+
+  <div class="header-container">
+    <img src="Logo_pixel_green_large.png" alt="Wandrio Logo" class="logo">
+    <h1>Coming Soon</h1>
+    <div class="support-text">
+      <h2>All in exploration app</h2>
+      <p>At Wandrio, we believe the world is meant to be explored—on foot, by bike, however you move. Our mission is to get people moving in nature more often by turning the outdoors into a game.</p>
+    </div>
+    <div class="email-form">
+      <form action="https://formspree.io/f/mgvkyqan" method="POST">
+        <input id="email" type="email" name="email" placeholder="Enter your email" aria-label="Email" required>
+        <button type="submit">Join the Waiting List</button>
+      </form>
+    </div>
+  </div>
+
+  <button type="button" class="info-fab" aria-label="Open information menu" aria-expanded="false" aria-controls="infoMenu" id="infoFab">
+    <img src="assets/information.png" alt="">
+  </button>
+  <nav class="info-menu" id="infoMenu" aria-label="Information links">
+    <a href="data-removal.html">Delete My Data</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </nav>
+
+  <script>
     (function(){
       const btn = document.getElementById('infoFab');
       const menu = document.getElementById('infoMenu');
@@ -51,20 +49,17 @@
         btn.setAttribute('aria-expanded', state ? 'true' : 'false');
       }
 
-      // Toggle on button click; prevent bubbling so document handler won't immediately close it
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         setOpen(!menu.classList.contains('open'));
       });
 
-      // Close when clicking anywhere outside the button or the menu
       document.addEventListener('click', (e) => {
         if(!menu.contains(e.target) && !btn.contains(e.target)){
           setOpen(false);
         }
       });
 
-      // Close with Escape key
       document.addEventListener('keydown', (e) => {
         if(e.key === 'Escape') setOpen(false);
       });

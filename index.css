@@ -96,12 +96,13 @@ h1 {
 .email-form button {
   padding: 0.7rem 1rem;
   font-size: 1rem;
-  border: none;
+  border: 1px solid rgba(255,255,255,.55);
   border-radius: 999px;
-  background: #fff;
-  color: #111;
+  background: rgba(0,0,0,.5);   /* dark and transparent */
+  color: #fff;
   cursor: pointer;
-  transition: filter 120ms ease;
+  backdrop-filter: blur(4px);
+  transition: background-color .15s ease, transform .08s ease, border-color .15s ease;
 }
 /* Align and center the form controls with consistent spacing */
 .email-form form{
@@ -111,7 +112,9 @@ h1 {
   gap: 12px;        /* space between input and button */
   flex-wrap: wrap;  /* wrap on smaller widths */
 }
-.email-form button:hover { filter: brightness(.95); }
+.email-form button:hover{ background: rgba(0,0,0,.6); }
+.email-form button:active{ transform: translateY(1px); }
+.email-form button:focus-visible{ outline: none; box-shadow: 0 0 0 2px rgba(147,197,253,.9); }
 
 /* Footer (in flow, clickable) */
 footer {
@@ -202,13 +205,13 @@ footer a:hover { text-decoration: underline; }
   .support-text { padding: 0 10px; }
   h1 { font-size: 1.6rem; }
   .email-form input[type="email"],
-  .email-form button { width: min(320px, 90vw); }
+  .email-form button { width: min(280px, 84vw); }
   .email-form form{ flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; }
   .logo{ margin-top: -10px; } /* lift logo slightly to create space */
 
   /* Reserve space for the info button and avoid overlap with CTA */
-  .header-container { padding-bottom: 96px; }   /* extra bottom padding in hero */
-  .email-form { margin-bottom: 56px; }          /* lift the form away from the bottom-right FAB */
+  .header-container { padding-bottom: 104px; }   /* extra bottom padding in hero */
+  .email-form { margin-bottom: 72px; }          /* lift the form away from the bottom-right FAB */
   .info-fab { bottom: 28px; right: 16px; }      /* move FAB up slightly on small screens */
   .info-menu { bottom: 76px; right: 16px; }     /* keep menu attached above the FAB */
 }
