@@ -96,13 +96,13 @@ h1 {
 .email-form button {
   padding: 0.7rem 1rem;
   font-size: 1rem;
-  border: 1px solid rgba(255,255,255,.55);
+  border: 0;
   border-radius: 999px;
   background: rgba(0,0,0,.5);   /* dark and transparent */
   color: #fff;
   cursor: pointer;
   backdrop-filter: blur(4px);
-  transition: background-color .15s ease, transform .08s ease, border-color .15s ease;
+  transition: background-color .15s ease, transform .08s ease;
 }
 /* Align and center the form controls with consistent spacing */
 .email-form form{
