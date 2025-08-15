@@ -84,7 +84,7 @@ h1 {
   padding: 0.7rem 1rem;
   font-size: 1rem;
   width: clamp(220px, 40vw, 320px);
-  margin-right: 10px;
+  margin: 0;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.55);
   background: rgba(255,255,255,.08);
@@ -102,6 +102,14 @@ h1 {
   color: #111;
   cursor: pointer;
   transition: filter 120ms ease;
+}
+/* Align and center the form controls with consistent spacing */
+.email-form form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;        /* space between input and button */
+  flex-wrap: wrap;  /* wrap on smaller widths */
 }
 .email-form button:hover { filter: brightness(.95); }
 
@@ -193,7 +201,10 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   .support-text { padding: 0 10px; }
   h1 { font-size: 1.6rem; }
-  .email-form input[type="email"] { width: 200px; }
+  .email-form input[type="email"],
+  .email-form button { width: min(320px, 90vw); }
+  .email-form form{ flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; }
+  .logo{ margin-top: -10px; } /* lift logo slightly to create space */
 
   /* Reserve space for the info button and avoid overlap with CTA */
   .header-container { padding-bottom: 96px; }   /* extra bottom padding in hero */
