@@ -158,7 +158,5 @@ footer a:hover {
     font-size: 2rem;
   }
   
-  .email-form input[type="email"] {
-    width: 200px;
-  }
+  /* Removed the width change for email input to keep it consistent across devices */
 }
